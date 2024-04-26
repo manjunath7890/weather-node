@@ -5,7 +5,7 @@ const router = express.Router();
 router.use(cors());
 
 require("../db doc/atlas_conn");
-const User = require("../model/userSchema");
+const UserForm = require("../model/userSchema");
 
 router.get("/", (req, res) => {
   res.send("hello router");
@@ -16,14 +16,14 @@ router.post("/signup", async (req, res) => {
 
 
   try {
-    const newUser = await User.findOne({ email });
+    const newUser = await UserForm.findOne({ email });
 
     if (newUser) {
       console.log("user already exist");
       return res.status(401).send({ message: "user already exist" });
     }
 
-    const user = new User({ userName, email, password });
+    const user = new UserForm({ userName, email, password });
     await user.save();
 
     console.log("user registered successfully!");
@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email, password });
+    const user = await UserForm.findOne({ email, password });
 
     if (user) {
       res
