@@ -1,5 +1,4 @@
 const cors = require('cors');
-const dotenv = require('dotenv');
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -8,8 +7,6 @@ const app = express();
 app.use(cors());
 
 const PORT = process.env.PORT || 4000;
-
-dotenv.config({path: './config.env'});
 
 require('./db doc/atlas_conn');
 app.use(express.json()); 
