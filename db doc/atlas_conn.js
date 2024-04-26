@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const db = "mongodb+srv://clientweather:etnA1Fu01Nd4blfV@cluster0.vkscikk.mongodb.net/test?retryWrites=true&w=majority";
+const db = "mongodb+srv://flyingfortress289:flyingfortress289@cluster0.zlhd1zd.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(db, {
     useNewUrlParser: true,
