@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const db = "mongoDB_URL";
+const db = "mongodb+srv://flyingfortress289:flyingfortress289@cluster0.zlhd1zd.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(db, {
     useNewUrlParser: true,
